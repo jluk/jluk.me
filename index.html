@@ -8,9 +8,9 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="../../favicon.ico">
+    <link rel="icon" href="favicon.ico">
 
-    <title>Hello!</title>
+    <title>Justin Luk</title>
 
     <!-- Bootstrap core CSS -->
     <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -27,6 +27,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+
+    <script src="http://d3js.org/d3.v3.min.js" language="JavaScript"></script>
+    <script src="LiquidFillGauge.js" language="JavaScript"></script>
+    <style>
+        .liquidFillGaugeText { font-family: Helvetica; font-weight: bold; }
+    </style>
+
   </head>
 
   <body>
@@ -39,11 +46,11 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h3 class="masthead-brand">Cover</h3>
+              <h3 class="masthead-brand">Under Construction</h3>
               <nav>
                 <ul class="nav masthead-nav">
                   <li class="active"><a href="#">Home</a></li>
-                  <li><a href="#">Resume</a></li>
+                  <li><a href="resume.html">Resume</a></li>
                   <li><a href="#">Contact</a></li>
                 </ul>
               </nav>
@@ -54,13 +61,49 @@
             <h1 class="cover-heading">Justin Luk</h1>
             <p class="lead">Computer science student in love with tech, product, and design.</p>
             <p class="lead">
-              <a href="#" class="btn btn-lg btn-default">Learn more</a>
+
+              <svg id="fillgauge1" width="97%" height="250" onclick="gauge1.update(NewValue());"></svg>
+
+              <script language="JavaScript">
+                  var gauge1 = loadLiquidFillGauge("fillgauge1", 35);
+                  var config1 = liquidFillGaugeDefaultSettings();
+                  config1.circleColor = "#00CC7A";
+                  config1.textColor = "#4CFFB8";
+                  config1.waveTextColor = "#FFAAAA";
+                  config1.waveColor = "#FFDDDD";
+                  config1.circleThickness = 0.2;
+                  config1.textVertPosition = 0.2;
+                  config1.waveAnimateTime = 1000;
+
+                  function NewValue(){
+                      if(Math.random() > .5){
+                          return Math.round(Math.random()*100);
+                      } else {
+                          return (Math.random()*100).toFixed(1);
+                      }
+                  }
+              </script>
+
             </p>
           </div>
 
           <div class="mastfoot">
             <div class="inner">
               <p>Happy to connect!</p>
+              <p>
+                <a href="https://github.com/jluk">
+                  <img src="icons/Social_Icons/Github.png" alt="Github" width="42" height="42" border="0">
+                </a>
+
+                <a href="https://www.linkedin.com/in/lukjustin">
+                  <img src="icons/Social_Icons/linkedin.png" alt="LinkedIn" width="42" height="42" border="0">
+                </a>
+
+                <a href="https://twitter.com/whosjluk">
+                  <img src="icons/Social_Icons/twitter.png" alt="Twitter" width="42" height="42" border="0">
+                </a>
+              </p>
+
             </div>
           </div>
 
